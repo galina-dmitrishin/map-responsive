@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="app.css" >
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+
+</head>
+<body>   
+
+<div class="container-fluid w-auto" id="map-app">
+    <div class="row">
+        <div class="col-3 order-2 shadow bg-white p-0 position-relative" id="sticky-sidebar">
+            <span class="map-heading p-4 w-75">Create an unique map poster of any place on earth</span>
+            
+            <div class="m4d-accordion-holder">
+                <div class="btn-show-guide">
+                    <a href="" class="btn-guide"><img class="btn-guide-img" src="images/smartphone-call.png">Guide</a>
+                    <a href="" class="btn-show">Show</a>
+                </div>
+                <div class="tabs-head">
+                    <div class="tab">Location</div>
+                    <div class="tab">Edit text</div>
+                    <div class="tab">Theme</div>
+                    <div class="tab">Poster size</div>
+                </div>
+                <ul class="m4d-accordion">
+                    <li>
+                        <a class="active">Choose location</a>
+                        <div class="holder line-height-normal tabs-content" style="display: block;">
+                                <span class="only-mobile">Search your favourite place or sity</span>
+                                <span class="input-group mb-3">
+                                    <input id="m4d-location-input" type="text" class="form-control" placeholder="Choose location.." aria-label="Choose location.." aria-describedby="m4d-location-search">
+                                    <button class="btn btn-outline-pink" type="button" id="m4d-location-search">Search</button>
+                                </span>
+                            <p class="text-muted fw-bold accordion-full-width">
+                                Inspiration tip! <br>What maps our customer are creating:
+                            </p>
+                            <p class="text-muted accordion-full-width">
+                                - Hometown or birthplace<br>
+                                - The hometown of a family member or friend<br>
+                                - Your favourite place in the world<br>
+                                - Where you met your partner<br>
+                                - Your dream destination<br>
+                            </p>
+                            <p class="text-muted accordion-full-width">
+                                <span class="fw-bold">Pro tip:</span><br> You can drag/drop and zoom on the map to get the exact position you want on your poster.
+                            </p>
+                        </div>
+
+                    </li>
+                    <li>
+                        <a>Customize the text</a>
+                        <div class="holder tabs-content">
+                            <span class="only-mobile">Customize the text</span>
+                                    <span class="form-group">
+                                        <label for="heading" class="form-label accordion-full-width">Heading text:</label><br class="accordion-full-width">
+                                        <input class="form-control" id="m4d-heading-input" autocomplete="off" name="heading" type="text" value="New York">
+                                    </span>
+                            <span class="form-group">
+                                        <label for="divider" class="form-label accordion-full-width">Divider text:</label><br>
+                                        <input class="form-control" id="m4d-divider-input" autocomplete="off" name="divider" type="text" value="United States">
+                                    </span>
+                        </div>
+                    </li>
+                    <li>
+                        <a>Customize the colors/theme</a>
+                        <div class="m4d-radio-image-group holder tabs-content">
+                            <span class="text-mobile">
+                                <span class="only-mobile">Customize the colors/theme</span>
+                            </span>                            
+                            <div class="d-inline" style="display: none;">
+                                <input checked="" data-theme_label="Blue Sky" data-theme="m4d-theme-blue-sky" type="radio" class="theme_variant" name="choice" id="m4d-theme-0" value="ckqjh8faw09ke17mkh94wc6sn">
+
+                                <label for="m4d-theme-0" class="form-label">
+                                    <figure class="theme-thumbnail" style="background-image: url('images/blue_sky.png');"></figure>
+                                    <span class="d-flex justify-content-center">Blue Sky</span>
+                                </label>
+                            </div>
+                            <div class="d-inline" style="display: none;">
+                                <input data-theme_label="Light Grey" data-theme="m4d-theme-light-grey" type="radio" class="theme_variant" name="choice" id="m4d-theme-1" value="ckqlxa5vy3jvs18k8o3c78wt4">
+
+                                <label for="m4d-theme-1" class="form-label">
+                                    <figure class="theme-thumbnail" style="background-image: url('images/light_grey.png');"></figure>
+                                    <span class="d-flex justify-content-center">Light Grey</span>
+                                </label>
+                            </div>
+                            <div class="d-inline" style="display: none;">
+                                <input data-theme_label="Modern Shade" data-theme="m4d-theme-modern-shade" type="radio" class="theme_variant" name="choice" id="m4d-theme-2" value="ckqnh3iff10yo17nu13jvixjs">
+
+                                <label for="m4d-theme-2" class="form-label">
+                                    <figure class="theme-thumbnail" style="background-image: url('images/modern_shade.png');"></figure>
+                                    <span class="d-flex justify-content-center">Modern Shade</span>
+                                </label>
+                            </div>                            
+                        </div>
+                    </li>
+                    <li>
+                        <a>
+                            Select the poster size
+                            <!-- <span class="badge badge-success float-right text-center">New</span> -->
+                        </a>
+                        <div class="holder tabs-content">
+                            <label class="form-label accordion-full-width">Select size:</label>
+                            <label class="form-label only-mobile">Select size and orientation</label>
+                            <div class="p-0" style="display: none;">
+                                    <span class="btn-group size-buttons" role="group">
+                                                                                    <input data-scale_ratio="1" checked="" data-label="30x40cm" data-pixel_width="360" data-pixel_height="480" value="40132852613292" type="radio" class="btn-check poster_variant" name="poster_variant" id="btnradio0" autocomplete="off">
+                                            <label class="btn btn-outline-pink text-lowercase" for="btnradio0">30x40cm</label>
+                                                                                    <input data-scale_ratio="2" data-label="50x70cm" data-pixel_width="600" data-pixel_height="840" value="40132852646060" type="radio" class="btn-check poster_variant" name="poster_variant" id="btnradio1" autocomplete="off">
+                                            <label class="btn btn-outline-pink text-lowercase" for="btnradio1">50x70cm</label>
+                                                                                    <input data-scale_ratio="3" data-label="70x100cm" data-pixel_width="840" data-pixel_height="1200" value="40132852678828" type="radio" class="btn-check poster_variant" name="poster_variant" id="btnradio2" autocomplete="off">
+                                            <label class="btn btn-outline-pink text-lowercase" for="btnradio2">70x100cm</label>
+                                                                            </span>
+                            </div>
+
+                            <label class="form-label accordion-full-width">Select orientation:</label>
+                            <div class="p-0" style="display: none;">
+                                    <span class="btn-group size-buttons size-buttons-formobile" role="group">
+                                        <input value="portrait" type="radio" checked="" class="btn-check orientation_variant" name="orientation_variant" id="m4d-variant-portrait" autocomplete="off">
+                                        <label class="btn btn-outline-pink text-lowercase" for="m4d-variant-portrait">Portrait</label>
+                                        <input value="landscape" type="radio" class="btn-check orientation_variant" name="orientation_variant" id="m4d-variant-landscape" autocomplete="off">
+                                        <label class="btn btn-outline-pink text-lowercase" for="m4d-variant-landscape">Landscape</label>
+                                    </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <span class="d-flex justify-content-center accordion-full-width">
+                        <a href="https://www.mapbox.com/about/maps" target="_blank" class="copyright-row m-lg-1 accordion-full-width">&copy; Mapbox</a>
+                        <a href="https://openstreetmap.org/copyright/en" target="_blank" class="copyright-row m-lg-1 accordion-full-width">&copy; Openstreet Map</a>
+                    </span>
+
+            </div>
+
+            <div>
+                <button type="button" class="add-to-cart w-100 btn btn-link position-absolute bottom-0 mb-4" id="add_to_cart_btn">
+                    <span id="currency-holder" class="float-start"></span>
+                    <span id="price-holder" class="float-start"></span>
+                    <span class="float-end">Add to cart</span>
+                </button>
+            </div>
+        </div>
+        <div class="col" id="main">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="m4d-container col-md-6 justify-content-center bg-white shadow rounded web-version" id="m4d-container">
+                        <div class="m4d-map" id="mapid"></div>
+                        <div class="m4d-gradient-overlay col-md-12 d-flex justify-content-center">
+                            <div class="text-center align-self-center position-absolute m4d-overlay-text">
+                                <div class="m4d-overlay-heading" id="m4d-overlay-heading">New York</div>
+                                <div class="justify-content-center d-flex align-items-center" id="m4d-overlay-divider-block">
+                                    <span class="m4d-overlay-divider-hyphen d-inline-block"></span>
+                                    <span class="m4d-overlay-divider" id="m4d-overlay-divider">United States</span>
+                                    <span class="m4d-overlay-divider-hyphen d-inline-block"></span>
+                                </div>
+                                <div class="m4d-overlay-tagline mt-1">
+                                    <span id="m4d-latitude">123</span>°N /
+                                    <span id="m4d-longitude">456</span>°E
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <span class="text-muted p-0" id="m4d-size-reminder" style="width: 360px">30x40cm</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="accordion.js" type="application/javascript"></script>
+</body>
+</html>
